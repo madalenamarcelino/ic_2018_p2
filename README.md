@@ -32,7 +32,7 @@ O programa deve aceitar como único parâmetro um ficheiro de configuração em 
 ; Dimensao da grelha de jogo
 xdim=20
 ydim=20
-; Numero inicial de zombies e humanos
+; Definicao da grelha
 N=D
 S=B4
 E=L11
