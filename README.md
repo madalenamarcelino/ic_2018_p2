@@ -82,3 +82,15 @@ Deve ser submetido um ficheiro `zip` com os seguintes conteúdos:
   * Referências:
     * Incluindo trocas de ideias com colegas, código aberto reutilizado e
       bibliotecas de terceiros utilizadas. Devem ser o mais detalhados possível.
+
+
+
+## Exemplos de Execução
+
+### Leitura do Ficheiro de inicialização e apresentação na consola
+
+O ficheiro de inicialização deverá ser passado como argumento. Após a sua leitura e interpretação, o programa deverá mostrar o mapa. A Figura seguinte mostra uma possível implementação utilizando a consola.
+![Exemplo de leitura do mapa](readingMap.png)
+
+Encontra-se também disponível o ficheiro .ini correspondente ao exemplo.
+
