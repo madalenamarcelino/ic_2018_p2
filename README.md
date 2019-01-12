@@ -24,7 +24,7 @@ O objectivo do jogo é chegar primeiro aos 6 pontos: cada aldeia vale 1 ponto e 
 
 Preços:
 - Aldeia: B + L + G + W
-- Cidade: G + G + O + O + O
+- Cidade: G + G + I + I + I
 
 ## Invocação do programa
 O programa deve aceitar como único parâmetro um ficheiro de configuração em formato [INI]<sup>[4](#fn4)</sup>, de acordo com o seguinte exemplo:
