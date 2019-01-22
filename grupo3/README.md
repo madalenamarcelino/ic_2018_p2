@@ -5,23 +5,28 @@
 
 **Solução**
 
-* Para a estruturação geral do código utilizámos structs, switch cases, 
-fors, ifs e pointers de modo a podermos obter os melhores resultados na 
-execução do código. 
+Para a organização e simplicidade do código foram utilizados:
+* Structs de modo a definir várias variáveis sob um nome dentro de um bloco de memória;
+* Switch cases de modo a simplificar as escolhas e opções do jogador;
+* Fors de modo a gerir os numeráveis parâmetros que influenciam o que o jogador pode ou não fazer;  
+* Ifs de modo a simplificar as "permissões do jogador";
+* Pointers para se poder aceder às structs previamente definidas. 
 
 Fluxograma da nossa versão do jogo "Settlers of Catan:
 ![Fluxograma](fluxograma.png)
 
 
-* estruturas de dados: grelha de simulação, outras estruturas auxiliares 
-relevantes
-* algoritmos relevantes
+**estruturas de dados:**
+*Estructura utilizada para os territórios
 
 
 **Manual do Utilizador**
 
-* Como compilar: qual o comando ou comandos necessários para gerar uma 
-build do jogo
+Como compilar:
+* Começar por meter no terminal:
+* -> gcc -std=c99 -g -Wall -Wextra -Wpedantic -o catan catan.c 
+* Seguido por:
+* -> ./catan
 
 * Regras do jogo:
 
@@ -65,12 +70,9 @@ Preços de construcção de aldeias e de cidades:
 
 **Conclusões e matéria aprendida**
 
-* Houve problemas persistentes nas structs e na execução geral do código 
-realçando especialmente a incorporação das estructuras e o funcionamento 
-das mesmas, garantir que os valores destas fossem alteradas como 
-necessário e que estes se mantiam inalterados quando necessários foi 
-também um desafio em sim. Foi também relativamente difícil manter uma 
-organização persistente na estrutura do código.
+* Melhoramento do conhecimento de C, incluíndo a melhor utilização de structs;
+* Conhecimento sobre a criação de doxyfiles;
+* Conhecimento sobre uma versão do jogo "Settlers of Catan".
 
 
 **Referências**
