@@ -147,6 +147,24 @@ int main() {
 		char s;
 
 		tablePrint();
+		
+		//rules
+		printf("Both players will start by choosing their starting local.\n");
+		printf("Each local/village has terrains surrounding them.\n");
+		printf("On the North(N), South(S), East(E) and West(W).\n");
+		printf("Each of these terrains are linked to a resource and a number.\n");
+		printf("The resources are:\nGrain(G), Iron(I), Brick(B), Lumber(L), Wool(W) and Desert(D).\n");
+		printf("Each round 2 dice will be rolled by the player.\n");
+		printf("Player 1 goes first.\n");
+		printf("After the dice have been rolled they will be summed.\n");
+		printf("If the sum is equal to a resource in your terrain you get said resource if not, too bad.\n\n");
+		printf("After that you have 5 options you can choose from.\n");
+		printf("YOU CAN DO THIS AS LONG AS YOU DON'T PASS YOUR TURN\n");
+		printf("THERE IS NO LIMIT TO YOUR ACTIONS AS LONG AS YOU HAVE RESOURCES\n\n");
+		printf("The game ends when one player reaches 6 points.\n");
+		printf("Village = 1 Point\nCity = 2 Points\n\n");
+		printf("To build a village you need:\n - 1 G, 1 L, 1 B and 1 W\n");
+		printf("To build a city you need:\n - 2 G, 3 I\n\n");
 
 		printf("Player 1, please pick a land to start with\n");
 		scanf("%d", &player1);
@@ -156,14 +174,20 @@ int main() {
 		giveLand(player1, 1, table);
 		giveLand(player2, 2, table);
 
-		printf("r to roll the dice\n");
-		printf("q to quit\n");
+		printf("Press r to roll the dice\n");
+		printf("Press q to quit\n");
 		printf("Dice: %d\n", sum);
 		dice = getchar();
 		s = getchar();
 		dice = tolower(dice);
 		sum = selection(dice);	
 		
+		printf("Place a village.\nPress v.\n");
+		printf("Upgrade a village to a city.\nPress c.\n");
+		printf("Trade 4 of the same resource for 1 you need.\nPress t.\n");
+		printf("Trade 10 of the same resource for 1 points.\nPress s.\n");
+		printf("End your turn.\nPress e.\n");
+
 
 	}
 
