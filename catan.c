@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <ctype.h> 
-#include "second.c"
+//#include "second.c"
 
 /**
 * @author Madalena Marcelino a21700859
@@ -49,8 +49,7 @@ int rollDice() {
 		return sum;
 }
 
-int selection (char c) {
-/**
+/*
 * @breif Switch cases to determine what each key that is pressed does
 *
 * @param caseR This is where the function rollDice with the two added random
@@ -65,25 +64,11 @@ int selection (char c) {
 *
 * @param caseDefault This case is in case any other input other than the ones
 * specified in the code is intered. If so then the code will loop itself back
+*
 * to the beggining of the function
 */
-	switch(c) {
 
-		case 'r':
-			return rollDice();	
-		case 'q':
-			exit(0);
-					// exit game
-		case 'p':
-			selectResources();
-			break;
 
-		default:
-			system("clear");
-			printf("%c\n", c);	// buffer
-			return 420;
-	}
-}
 
 void memoryAlloc(struct land **table) {
 /**
@@ -92,7 +77,7 @@ void memoryAlloc(struct land **table) {
 *
 */ 
 
-	table =(struct land*) calloc(4, sizeof(struct land*));
+	table =(struct land**) calloc(4, sizeof(struct land*));
 
 	for(int i = 0; i < 4; i++) {
 		table[i] =(struct land*) calloc(4, sizeof(struct land));
@@ -102,7 +87,7 @@ void memoryAlloc(struct land **table) {
 
 
 
-void selectResources(struct land **LAND, int i, int j, int player) {
+void selectResources(struct land **LAND, int player, int ID) {
 
 
 	for(int i = 0; i < 4; i++) {
@@ -118,18 +103,7 @@ void selectResources(struct land **LAND, int i, int j, int player) {
 	}
 }
 
-void villageFinder(){
-/**
-* @breif Function that calls the second part of the code
-*
-* This secondary code is reserved purely to check if the newly picked land is
-* neighoring the previously owned land. This piece of the code was too large to
-* keep in the original file therefore it was separated
-*/
-	
-	secondResourceCode();						
-	
-}
+
 
 void tablePrint(){
 /**
@@ -168,6 +142,8 @@ void tablePrint(){
 }
 
 
+
+
 void giveLand(int ID, int player, struct land **table) {
 /**
 * @breif Function gives land to the player
@@ -188,6 +164,7 @@ int main() {
 	int gameLoop = 0;
 	int player[6];
 	int player1, player2;
+	int ID;
 
 	int whoPlayin;
 
@@ -213,6 +190,8 @@ int main() {
 	while(gameLoop <= 0) {
 		system("clear");
 		char s;
+		char opc;
+
 
 		tablePrint();
 
@@ -233,6 +212,22 @@ int main() {
 		dice = tolower(dice);
 		sum = selection(dice);	
 		
+		switch(opc) {
+
+			case 'r':
+				return rollDice();	
+			case 'q':
+				exit(0);
+						// exit game
+			case 'p':
+				selectResources(table, player, ID);
+				break;
+
+			default:
+				system("clear");
+				printf("%c\n", opc);	// buffer
+				return 420;
+		}
 
 	}
 
