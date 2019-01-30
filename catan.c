@@ -94,7 +94,7 @@ void selectResources(struct land **LAND, int player, int ID) {
 		for(int j = 0; j < 4; j++) {
 
 			if(LAND[i][j].id == ID) {
-				villageFinder(LAND, i, j, player);
+				secondResourceCode(LAND, i, j, player);
 
 
 			}
@@ -189,7 +189,6 @@ int main() {
 */	
 	while(gameLoop <= 0) {
 		system("clear");
-		char s;
 		char opc;
 
 
@@ -208,7 +207,6 @@ int main() {
 		printf("press p to pick a land\n");
 		printf("Dice: %d\n", sum);
 		dice = getchar();
-		s = getchar();
 		dice = tolower(dice);
 		opc = getchar();	
 		
@@ -216,13 +214,11 @@ int main() {
 
 			case 'r':
 				return rollDice();	
-			case 'q':
-				exit(0);
-						// exit game
 			case 'p':
 				selectResources(table, *player, ID);
 				break;
 			case'm':
+				system("clear");
 				printf("Welcome to our game, it's a game for 2 players that opose eachother.\n\n"); 
 				printf("At the start of the game each player will choose a starting location on the map, in which they will place their first village.\n");
 				printf("You must pick different locations.\n");
@@ -245,7 +241,11 @@ int main() {
 				printf("To buy a village you need:\n Brick (B),Lumber (L), Grain (G), Wool (W) \n\n");
 				printf("To buy a city you need: \n-2 Grain (G) and 3 Iron (I)\n\nGood luck and have fun.\n\n");
 
+				opc = getchar();
 				break;
+			case 'q':
+				exit(0);
+						// exit game
 
 			default:
 				system("clear");
