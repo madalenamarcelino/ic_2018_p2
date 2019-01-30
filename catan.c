@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <ctype.h> 
-//#include "second.c"
+#include "second.c"
 
 /**
 * @author Madalena Marcelino a21700859
@@ -18,6 +18,7 @@ struct land {
 	int id;
 	int things[6];
 	int village;
+	int LAND;
 	
 
 } land;
@@ -218,6 +219,7 @@ int main() {
 				selectResources(table, *player, ID);
 				break;
 			case'm':
+
 				system("clear");
 				printf("Welcome to our game, it's a game for 2 players that opose eachother.\n\n"); 
 				printf("At the start of the game each player will choose a starting location on the map, in which they will place their first village.\n");
