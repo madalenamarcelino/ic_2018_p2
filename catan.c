@@ -164,9 +164,8 @@ int main() {
 	int gameLoop = 0;
 	int player[6];
 	int player1, player2;
-	int ID;
+	int ID = 15;
 
-	int whoPlayin;
 
 	struct land **table = NULL;
 	memoryAlloc(table);
@@ -205,6 +204,7 @@ int main() {
 		printf("r to roll the dice\n");
 		printf("q to quit\n");
 		printf("press p to pick a land\n");
+		printf("press m to open the rule menu");
 		printf("Dice: %d\n", sum);
 		dice = getchar();
 		dice = tolower(dice);
