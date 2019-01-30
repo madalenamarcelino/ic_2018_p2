@@ -210,7 +210,7 @@ int main() {
 		dice = getchar();
 		s = getchar();
 		dice = tolower(dice);
-		sum = selection(dice);	
+		opc = getchar();	
 		
 		switch(opc) {
 
@@ -220,7 +220,31 @@ int main() {
 				exit(0);
 						// exit game
 			case 'p':
-				selectResources(table, player, ID);
+				selectResources(table, *player, ID);
+				break;
+			case'm':
+				printf("Welcome to our game, it's a game for 2 players that opose eachother.\n\n"); 
+				printf("At the start of the game each player will choose a starting location on the map, in which they will place their first village.\n");
+				printf("You must pick different locations.\n");
+				printf("You CAN NOT have villages in the same location as eachother.\n");
+				printf("player 1 goes first).\n");
+				printf("Each local has terrains on the North (N), the South (S), the East (E) and the West (W).\n"); 
+				printf("These terrains are associated to specific numbers and each of these terrains produce certain natural resources that are as follows: \n"); 
+				printf("\n\n-Wool (W)\n-Brick (B)\n-Lumber (L)\n-Grain (G)\n-Iron (I)\n-Desert (D)\n\n");
+				printf("The game progresses via a round system.\n");
+				printf("Each round the player that is currently playing will roll two six-sided die.\n");
+				printf("The sum of the numbers they get is the resource they will take from the terrains in their village(s).\n"); 
+				printf("If there is no number that equals that sum, the player gets nothing.\n");
+				printf("After rolling the dice the player can do any of these actions as long as the resources he/she owns allows it:\n\n");
+				printf("-Buy a village and place in an adjacent local\n");
+				printf("-Transform a village into a city, doubling resource production in adjacent terrains to the city\n");
+				printf("-Trade resources with the bank in a 4 to 1 ratio, he trades 4 resource cards for 1 he wants\n");
+				printf("-Trade with the bank, in a 10 to 1 raito, 10 resources for 1 point\n");
+				printf("-Ending his turn, therefore comencing the other player's turn\n\n");
+				printf("The winner is the player that reaches 6 points, each village is worth 1 point whilst citys are worth 2 points.\n\n");
+				printf("To buy a village you need:\n Brick (B),Lumber (L), Grain (G), Wool (W) \n\n");
+				printf("To buy a city you need: \n-2 Grain (G) and 3 Iron (I)\n\nGood luck and have fun.\n\n");
+
 				break;
 
 			default:
