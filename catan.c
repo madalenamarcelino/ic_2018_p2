@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <ctype.h> 
-#include "second.c"
+#include "second.h"
 
 /**
 * @author Madalena Marcelino a21700859
@@ -17,9 +17,7 @@
 struct land {
 	int id;
 	int things[6];
-	int village;
-	int LAND;
-	
+	int village;	
 
 } land;
 
@@ -95,7 +93,7 @@ void selectResources(struct land **LAND, int player, int ID) {
 		for(int j = 0; j < 4; j++) {
 
 			if(LAND[i][j].id == ID) {
-				secondResourceCode(LAND, i, j, player);
+				Restrictions(LAND, i, j, player);
 
 
 			}

@@ -1,7 +1,10 @@
+#ifndef SECCOND
+#define SECCOND
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <ctype.h>
+#include "second.c"
 
 
 void Restrictions(struct land **LAND, int i, int j, int player, int ID) {
@@ -280,6 +283,7 @@ void Restrictions(struct land **LAND, int i, int j, int player, int ID) {
 		}
 	}
 }
+#endif
 
 
 	
