@@ -255,14 +255,6 @@ int main() {
 
 	}
 
-/**
-* @note Unfortunately we were not able to finish the code  and fix all of
-* errors in time of the delivery, therefore at this point the game is not 
-* playable in the terminal. We sincerly apologise for this but have decided
-* to submit everything we have been able to do.
-*/	
-
-
 
 	return 0;
 }
