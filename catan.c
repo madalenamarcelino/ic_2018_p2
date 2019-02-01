@@ -86,8 +86,7 @@ void selectResources(struct land **LAND, int player, int ID) {
 		for(int j = 0; j < 4; j++) {
 
 			if(LAND[i][j].id == ID) {
-				Restrictions(LAND, i, j, player);
-
+				Restrictions(LAND, i, j, player, ID);
 
 			}
 
@@ -119,15 +118,15 @@ void tablePrint(){
 		printf("|       #8       |       #9       |       #10      |       #11      |\n");
 		printf("| N: G(3)        | N: L(3)        | N: G(11)       | N: L(4)        |\n");
 		printf("| S: B(8)        | S: W(10)       | S: W(10)       | S: I(3)        |\n");//2
-		printf("| E: D           | E: W(9)        | E: D           | E: D           |\n");
-		printf("| W: D           | W: D           | W: W(9)        | W: D           |\n");
+		printf("| E: D           | E: B(9)        | E: D           | E: D           |\n");
+		printf("| W: D           | W: D           | W: L(9)        | W: D           |\n");
 		printf("|                |                |                |                |\n");
 		printf("+----------------+----------------+----------------+----------------+\n");
 		printf("|       #12      |       #13      |       #14      |       #15      |\n");
-		printf("| N: B(8)        | N: W(10)       | N: W(10)       | N: I(3)        |\n");
+		printf("| N: B(8)        | N: W(10)       | N: W(8)        | N: I(3)        |\n");
 		printf("| S: D           | S: D           | S: D           | S: D           |\n");//3
 		printf("| E: I(5)        | E: G(2)        | E: L(6)        | E: D           |\n");
-		printf("| W: D           | W: I(5)        | W: G(2)        | W: L(6)        |\n");
+		printf("| W: D           | W: I(5)        | W: G(2)        | W: L(7)        |\n");
 		printf("|                |                |                |                |\n");
 		printf("+----------------+----------------+----------------+----------------+\n");
 //                      0               1                 2               3
@@ -135,19 +134,146 @@ void tablePrint(){
 
 
 
-
 void giveLand(int ID, int player, struct land **table) {
 /**
 * @breif Function gives land to the player
 */
-	for(int i = 0; i < 4; i++) {
-		for(int j = 0; j < 4; j++) {
+	int i;
+	int j;
+	int W;
+	int B;
+	int L;
+	int G;
+	int I;
+
+	for(i = 0; i < 4; i++) {
+		for(j = 0; j < 4; j++) {
 			if(table[i][j].id == ID) {
 				table[i][j].village = player;
 			}
 		}
 	}
+
+	if(table[i][j].id == 0) {
+		W = 0;
+		B = 4;
+		L = 11;
+		G = 0;
+		I = 0;
+	}
+	else if(table[i][j].id == 1) {
+		W = 12;
+		B = 5;
+		L = 11;
+		G = 0;
+		I = 6;
+	}
+	else if(table[i][j].id == 2) {
+		W = 12;
+		B = 0;
+		L = 0;
+		G = 9;
+		I = 0;
+	}
+	else if(table[i][j].id == 3) {
+		W = 10;
+		B = 0;
+		L = 0;
+		G = 9;
+		I = 0;
+	}
+	else if(table[i][j].id == 4) {
+		W = 0;
+		B = 4;
+		L = 0;
+		G = 3;
+		I = 0;
+	}
+	else if(table[i][j].id == 5) {
+		W = 10;
+		B = 0;
+		L = 3;
+		G = 0;
+		I = 6;
+	}
+	else if(table[i][j].id == 6) {
+		W = 10;
+		B = 5;
+		L = 0;
+		G = 11;
+		I = 0;
+	}
+	else if(table[i][j].id == 7) {
+		W = 10;
+		B = 0;
+		L = 4;
+		G = 0;
+		I = 0;
+	}
+	else if(table[i][j].id == 8) {
+		W = 0;
+		B = 8;
+		L = 0;
+		G = 3;
+		I = 0;
+	}
+		else if(table[i][j].id == 9) {
+		W = 10;
+		B = 9;
+		L = 3;
+		G = 0;
+		I = 0;
+	}
+	else if(table[i][j].id == 10) {
+		W = 10;
+		B = 0;
+		L = 9;
+		G = 11;
+		I = 0;
+	}
+	else if(table[i][j].id == 11) {
+		W = 0;
+		B = 0;
+		L = 14;
+		G = 0;
+		I = 3;
+	}
+	else if(table[i][j].id == 12) {
+		W = 0;
+		B = 8;
+		L = 0;
+		G = 0;
+		I = 5;
+	}
+	else if(table[i][j].id == 13) {
+		W = 10;
+		B = 0;
+		L = 0;
+		G = 2;
+		I = 5;
+	}
+	else if(table[i][j].id == 14) {
+		W = 8;
+		B = 0;
+		L = 6;
+		G = 2;
+		I = 0;
+	}
+	else if(table[i][j].id == 15) {
+		W = 0;
+		B = 0;
+		L = 7;
+		G = 0;
+		I = 3;
+	}
+	else {
+		printf("there is nothing here\n");
+	}
+
+
 }
+
+
 
 
 int main() {
@@ -196,7 +322,7 @@ int main() {
 		printf("r to roll the dice\n");
 		printf("q to quit\n");
 		printf("press p to pick a land\n");
-		printf("press m to open the rule menu");
+		printf("press m to open the rule menu\n");
 		printf("Dice: %d\n", sum);
 		dice = getchar();
 		dice = tolower(dice);
