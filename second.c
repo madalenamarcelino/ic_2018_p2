@@ -4,6 +4,7 @@
 #include <ctype.h>
 
 
+
 void Restrictions(struct land **LAND, int i, int j, int player, int ID) {
 
 		// check if land can accept village

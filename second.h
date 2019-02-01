@@ -4,7 +4,16 @@
 #include <stdlib.h>
 #include <time.h>
 #include <ctype.h>
-#include "second.c"
+//#include "second.c"
+
+
+typedef struct land {
+	int id;
+	int things[6];
+	int village;
+
+
+} land;
 
 
 void Restrictions(struct land **LAND, int i, int j, int player, int ID) {

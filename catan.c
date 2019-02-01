@@ -14,13 +14,6 @@
 * 
 */
 
-struct land {
-	int id;
-	int things[6];
-	int village;	
-
-} land;
-
 int rollDice() {  
 /**
 * @breif Function to obtain 2 random numbers between 1 and 6
